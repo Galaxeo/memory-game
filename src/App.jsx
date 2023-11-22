@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./App.css";
-import Front from "./Front.jsx";
+import Game from "./Game.jsx";
 
 function App() {
   const [started, setStarted] = useState(false);
@@ -12,11 +12,11 @@ function App() {
   return (
     <>
       {started ? (
-        <Front />
+        <Game />
       ) : (
         <div>
           <h1>Start the memory game!</h1>
-          <button onClick={startGame}>Here</button>
+          <button onClick={startGame}>Play!</button>
         </div>
       )}
       <div></div>
