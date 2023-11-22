@@ -7,11 +7,8 @@ function Pokemon({ name }) {
     setData(data);
   };
   useEffect(() => {
-    const fetchData = async () => {
-      let data = await getPokemon(name);
-      changeData(data);
-    };
-    fetchData();
+    let data = JSON.parse(localStorage.getItem(name));
+    changeData(data);
   }, []);
 
   useEffect(() => {
