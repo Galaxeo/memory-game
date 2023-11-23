@@ -1,7 +1,7 @@
 const getPokemon = async (id) => {
   const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`);
   const data = await response.json();
-  localStorage.setItem(id, JSON.stringify(data));
+  localStorage.setItem(id, JSON.stringify(data.sprites.front_default));
 };
 
 export default getPokemon;

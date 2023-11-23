@@ -1,18 +1,34 @@
 import { useEffect, useState } from "react";
+import getPokemon from "./getPokemon.js";
 function Pokemon({ name }) {
   const [data, setData] = useState(null);
   const [image, setImage] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
   const changeData = (data) => {
     setData(data);
   };
   useEffect(() => {
-    let data = JSON.parse(localStorage.getItem(name));
-    changeData(data);
+    let interval = "";
+    if (isLoading) {
+      interval = setInterval(() => {
+        changeData(JSON.parse(localStorage.getItem(name)));
+      }, 1000);
+    } else {
+      clearInterval(interval);
+    }
+    return () => {
+      clearInterval(interval);
+    };
+  }, [isLoading]);
+  useEffect(() => {
+    getPokemon(name);
+    changeData(JSON.parse(localStorage.getItem(name)));
   }, []);
 
   useEffect(() => {
     if (data) {
-      setImage(data.sprites.front_default);
+      setImage(data);
+      setIsLoading(false);
     }
   }, [data]);
   return (

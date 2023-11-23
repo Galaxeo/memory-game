@@ -42,6 +42,13 @@
   grid: 1fr 1fr 1fr / 1fr 1fr 1fr;
   gap: 5px;
 }
+.links {
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15px;
+}
 #background {
   width: 100vw;
   height: 100vh;
