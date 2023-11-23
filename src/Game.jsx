@@ -56,7 +56,9 @@ function Game({ pokeArr }) {
   }, [score]);
   const changeMemory = (name) => {
     if (memory.includes(name)) {
-      setHighScore(score);
+      if (score > highScore) {
+        setHighScore(score);
+      }
       setScore(0);
       setMemory([]);
     } else {
@@ -69,6 +71,12 @@ function Game({ pokeArr }) {
     setWin(false);
     let newArr = pickRandomIntegers();
     setArr(newArr);
+  };
+  const restartRound = () => {
+    setMemory([]);
+    let newArr = pickRandomIntegers();
+    setArr(newArr);
+    setScore([]);
   };
   return (
     <>
@@ -94,6 +102,7 @@ function Game({ pokeArr }) {
         <a href="https://github.com/Galaxeo/memory-game">
           <FontAwesomeIcon icon={faGithub} />
         </a>
+        {!win ? <button onClick={resetGame}>{restart}</button> : <></>}
       </div>
     </>
   );
