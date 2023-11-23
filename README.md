@@ -4,7 +4,7 @@
 Click on each unique Pokémon once without clicking on the same one twice.
 # Features
 - Endless (as long as you never press the same Pokémon twice)
-- Mobile-compatible (styling can be a little off)
+- Mobile-compatible
 - Refresh button (if you get stuck and want a new set of Pokémon)
 - Music (pause music button available)
 # Details
