@@ -31,7 +31,7 @@ function App() {
         <Game pokeArr={pokeArr} />
       ) : (
         <div>
-          <h1>Start the memory game!</h1>
+          <h1>Pokémon Memory Game</h1>
           <button onClick={startGame}>Play!</button>
         </div>
       )}
