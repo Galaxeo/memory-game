@@ -1,10 +1,26 @@
 import { useState } from "react";
 import "./App.css";
 import Game from "./Game.jsx";
+import getPokemon from "./getPokemon.js";
 
 function App() {
+  const pokeArr = [
+    "darkrai",
+    "mew",
+    "arceus",
+    "pikachu",
+    "jirachi",
+    "victini",
+    "quagsire",
+    "charmander",
+    "chimchar",
+  ];
+  if (localStorage.getItem("darkrai") === null) {
+    pokeArr.forEach(async (pokemon) => {
+      await getPokemon(pokemon);
+    });
+  }
   const [started, setStarted] = useState(false);
-  const [score, setScore] = useState(0);
   const startGame = () => {
     setStarted(true);
   };
@@ -12,7 +28,7 @@ function App() {
   return (
     <>
       {started ? (
-        <Game />
+        <Game pokeArr={pokeArr} />
       ) : (
         <div>
           <h1>Start the memory game!</h1>

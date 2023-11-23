@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import getPokemon from "./getPokemon";
 function Pokemon({ name }) {
   const [data, setData] = useState(null);
   const [image, setImage] = useState(null);

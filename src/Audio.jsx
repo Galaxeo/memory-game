@@ -6,7 +6,7 @@ const pause = <FontAwesomeIcon icon={faPause} />;
 
 const useAudio = (url) => {
   const [audio] = useState(new Audio(url));
-  const [playing, setPlaying] = useState(false);
+  const [playing, setPlaying] = useState(true);
 
   const toggle = () => setPlaying(!playing);
 
@@ -16,6 +16,7 @@ const useAudio = (url) => {
 
   useEffect(() => {
     audio.volume = 0.1;
+    audio.loop = true;
   }, []);
 
   return [playing, toggle];
