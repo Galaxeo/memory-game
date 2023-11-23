@@ -5,9 +5,10 @@ import Pokemon from "./Pokemon.jsx";
 import backgroundVideo from "./assets/backgroundVideo.mp4";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
-import { faRotateRight } from "@fortawesome/free-solid-svg-icons";
+import { faRotateRight, faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import pickRandomIntegers from "./randomArr.js";
 const restart = <FontAwesomeIcon icon={faRotateRight} />;
+const keepGoing = <FontAwesomeIcon icon={faArrowRight} />;
 
 function PokemonList({ arr, changeMemory }) {
   return (
@@ -76,7 +77,7 @@ function Game({ pokeArr }) {
     setMemory([]);
     let newArr = pickRandomIntegers();
     setArr(newArr);
-    setScore([]);
+    setScore(0);
   };
   return (
     <>
@@ -85,7 +86,7 @@ function Game({ pokeArr }) {
         <>
           <h1>You win!</h1>
           <h2>Keep going?</h2>
-          <button onClick={resetGame}>{restart}</button>
+          <button onClick={resetGame}>{keepGoing}</button>
         </>
       ) : (
         <>
@@ -102,7 +103,7 @@ function Game({ pokeArr }) {
         <a href="https://github.com/Galaxeo/memory-game">
           <FontAwesomeIcon icon={faGithub} />
         </a>
-        {!win ? <button onClick={resetGame}>{restart}</button> : <></>}
+        {!win ? <button onClick={restartRound}>{restart}</button> : <></>}
       </div>
     </>
   );
