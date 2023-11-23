@@ -33,7 +33,7 @@ function Pokemon({ name }) {
   }, [data]);
   return (
     <div>
-      <img src={image} alt="" />
+      <img className="pokeImg" src={image} alt="" />
     </div>
   );
 }

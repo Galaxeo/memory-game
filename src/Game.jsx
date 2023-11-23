@@ -20,6 +20,7 @@ function PokemonList({ arr, changeMemory }) {
             onClick={() => {
               changeMemory(pokemon);
             }}
+            className="pokeButton"
           >
             <Pokemon name={pokemon} />
           </button>

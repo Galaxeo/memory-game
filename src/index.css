@@ -45,7 +45,13 @@ button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
-
+.pokeButton {
+  padding: 0.3vw 0.9vh;
+}
+.pokeImg {
+  width: min(96px, 10vh);
+  height: min(96px, 10vh);
+}
 a {
   border-radius: 8px;
   border: 1px solid transparent;
