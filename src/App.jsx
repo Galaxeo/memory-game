@@ -38,6 +38,7 @@ function App() {
       ) : (
         <div>
           <h1>Pokémon Memory Game</h1>
+          <h3>Don't click on the same Pokémon twice!</h3>
           <button onClick={startGame}>Play!</button>
         </div>
       )}
