@@ -21,4 +21,4 @@ This project was done utilizing HTML, CSS, and JavaScript through React and Vite
 
 Music: [Closed on Sunday](https://www.youtube.com/@ClosedonSunday)
 
-[Art](https://moewalls.com/pixel-art/hilda-and-tepig-watching-castelia-city-pokemon-pixel-live-wallpaper/)
+[Art](https://ko-fi.com/itzah)
